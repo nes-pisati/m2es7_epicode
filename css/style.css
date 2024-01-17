@@ -20,12 +20,20 @@ main {
     align-items: center;
     justify-content: center;
     width: 35%;
-    height: 30vh;
+    height: 20vh;
     border-radius: 30px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+
 input {
-    width: 50%;
+    width: 100%;
     height: 20px;
     margin: 5px 0 5px 0;
     border-radius: 10px;
@@ -47,11 +55,47 @@ button {
 .resultsContainer {
     background-color: white;
     width: 90%;
-    height: 100vh;
+    height: auto;
     border-radius: 30px;
     margin-top: 20px;
 }
 
 .jobCard {
-    background-color: aqua;
+    background-color: lightgray;
+    width: 25%;
+    height: 20%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 10px;
+    text-align: center;
 }
+
+h2 {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 5px;
+    color: gray;
+}
+
+.jobTitleField, .jobLocationField {
+    margin: 10px;
+    font-size: medium;
+}
+
+span {
+    font-weight: bolder;
+    font-style: oblique;
+    color: darkgray
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
