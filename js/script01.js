@@ -1,27 +1,54 @@
-function searchJob (jobTitle, jobLocation) {
-    let title = jobTitle.tolowercase();
-    let location = jobLocation.tolowercase();
-    let result = [];
-    let count = 0;
+const result = [];
+
+function searchJob (title, location) {
+
+    title = title.toLowerCase();
+    location = location.toLowerCase();
 
     jobs.forEach(job => {
-        if (jobs.location.includes(location) && jobs.title.includes(title)) {
+        const jobTitle = job.title.toLowerCase();
+        const jobLocation = job.location.toLowerCase();
+
+        if (jobLocation.includes(location) && jobTitle.includes(title)) {
             result.push(job);
         }
     })
 
-    return {result,
-    count: result.length}
+    return {
+        count: result.length,
+        result
+    }
 }
 
-searchJob()
+//console.log(searchJob("marketing","NY"))
+//console.log(result);
 
-console.log(searchJob(developer, US));
+function findJob() {
+    const jobTitle = document.querySelector("#jobTitle").value;
+    const jobLocation = document.querySelector("#jobLocation").value;
 
-//console.log(searchJob(developer, NY));
+    const results = searchJob(jobTitle, jobLocation);
 
-/*const jobTitle = document.querySelector("#jobTitle");
-const jobLocation = document.querySelector("#location");
-const searchBtn = document.querySelector("#searchBtn");
+    return results
+}
 
-console.log(jobTitle, jobLocation, searchBtn);*/
+const button = document.querySelector("form");
+button.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    showJobs();
+})
+
+function showJobs() {
+    const resultsDiv = document.getElementById("results");
+    const resultTitle = document.createElement("h2");
+    resultTitle.textContent = "Ecco i risultati della tua ricerca:"
+
+    /*result.forEach((element) => {
+        const card = document.createElement("div");
+        card.classList.add("jobCard");
+        const title = document.createElement("p");
+        title.textContent = "ciao"
+    })*/
+
+    resultsDiv.append(resultTitle);
+}; 
