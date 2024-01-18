@@ -99,3 +99,29 @@ span {
     margin-bottom: 10px;
 }
 
+@media only screen and (max-width: 400px) {
+    .searchContainer {
+        width: 80%;
+    }
+
+    form {
+        width: 70%;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .jobCard {
+        width: 80%;
+        margin-left: 0;
+    }
+
+    .jobTitleField, .jobLocationField {
+        margin: 5px;
+    }
+}
+
